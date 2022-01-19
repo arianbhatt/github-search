@@ -3,7 +3,7 @@
 # Dependencies - curl, sed, awk, git, grep, dmenu
 
 mkdir -p $HOME/.cache/github_search
-
+mkdir -p $HOME/Downloads/cloned_repositories
 menu="dmenu -i -l 10"
 cachedir="$HOME/.cache/github_search"
 
@@ -14,6 +14,8 @@ else
 fi
 
 query="$(echo $query | sed 's/ /+/g')"
+# just changing the current directory to a set location for all cloned repositories
+cd $HOME/Downloads/cloned_repositories
 
 # reference curl 'https://github.com/search?q=python&ref=simplesearch' -H 'User-Agent:Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:95.0) Gecko/2010010 Firefox/95.0'
 # search="https://github.com/search?q=$query&ref=simplesearch"
@@ -26,5 +28,6 @@ if test -z "$selected_repo"
 then
 	echo Valid Repo not selected
 else
+	
 	git clone "https://github.com/$selected_repo"
 fi
