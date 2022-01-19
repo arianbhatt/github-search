@@ -36,3 +36,20 @@ sudo make
 sudo make install
 ```
 
+## How to use this script
+
+```sh
+
+git clone https://github.com/arianbhatt/github-search
+
+```
+
+```sh
+
+cd github-search
+
+```
+
+```sh
+bash github-search
+```
